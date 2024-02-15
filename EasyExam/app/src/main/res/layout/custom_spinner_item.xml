@@ -1,0 +1,24 @@
+<!-- custom_dropdown_item_with_separator.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@android:id/text1"
+        style="?android:attr/spinnerItemStyle"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/accuracy"
+        android:ellipsize="marquee"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"/>
+
+
+</LinearLayout>

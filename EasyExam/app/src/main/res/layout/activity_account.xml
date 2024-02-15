@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    tools:context=".app.view.editexam.CreateTestActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_ar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="@string/account"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextColor="@color/blue_black" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_info_top"
+        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/top_app_ar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_shape"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_sex" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:gravity="center_horizontal"
+            android:text="Nghiem Dinh Bach"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/account_bg"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/layout_info_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTitleIDStudent"
+                android:textSize="16dp"
+                android:textColor="@color/gray"
+                android:layout_centerVertical="true"
+                android:text="ID Student:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_toRightOf="@+id/tvTitleIDStudent"
+                android:layout_marginStart="10dp"
+                android:id="@+id/tvIDStudent"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="CT040206"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:background="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTitleEmail"
+                android:textSize="16dp"
+                android:textColor="@color/gray"
+                android:layout_centerVertical="true"
+                android:text="Email:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_toRightOf="@+id/tvTitleEmail"
+                android:layout_marginStart="10dp"
+                android:id="@+id/tvEmail"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="CT040206@actvn.edu.vn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:background="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTitleIDClass"
+                android:textSize="16dp"
+                android:textColor="@color/gray"
+                android:layout_centerVertical="true"
+                android:text="Class:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_toRightOf="@+id/tvTitleIDClass"
+                android:layout_marginStart="10dp"
+                android:id="@+id/tvIDClass"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="CT4B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:background="@drawable/bg_change_password"
+        android:id="@+id/tvChangePassword"
+        android:text="@string/change_password"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@color/light_gray"
+        android:layout_margin="20dp"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:background="@drawable/bg_change_password"
+        android:id="@+id/tvLogout"
+        android:text="@string/logout"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/light_gray"
+        android:layout_margin="20dp"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

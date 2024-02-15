@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/peach"
+    tools:context=".app.view.main.user.MainUserActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/titleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Hello"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUsernameHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        tools:text="Hello, Kevin" />
+
+    <LinearLayout
+        android:id="@+id/layout_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUsernameHome"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_input_code"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/codeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/dialogTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/bg_edt"
+            android:drawableEnd="@drawable/ic_qr_code"
+            android:paddingEnd="10dp"
+            android:maxLength="8"
+            android:hint="Enter your code here"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvJoin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/bg_button_exam"
+            android:gravity="center"
+            android:text="@string/join_exam"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/home_bg"
+        android:elevation="4dp"
+        android:layout_below="@+id/layout_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvStartQuiz"
+            style="@style/cardViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/home_card_height"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/home_image_view_size"
+                    android:layout_height="@dimen/home_image_view_size"
+                    android:layout_marginStart="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/history"
+                    />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/categoryHeadingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/history"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCreate"
+            style="@style/cardViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/home_card_height"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="@+id/cvStartQuiz"
+            app:layout_constraintEnd_toEndOf="@+id/cvStartQuiz"
+            app:layout_constraintTop_toBottomOf="@+id/cvStartQuiz">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="@dimen/home_image_view_size"
+                    android:layout_height="@dimen/home_image_view_size"
+                    android:layout_marginStart="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_account"
+                    />
+
+                <TextView
+                    style="@style/categoryHeadingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/account"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="@+id/imageView3"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

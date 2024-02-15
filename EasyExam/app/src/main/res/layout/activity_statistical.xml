@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar Layout -->
+    <RelativeLayout
+        android:id="@+id/layout_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_centerVertical="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            app:srcCompat="@drawable/arrow"
+            app:tint="@color/blue_black" />
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/textView"
+            style="@style/titleTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="24dp"
+            android:text="@string/statistical" />
+
+        <ImageView
+            android:id="@+id/imgMore"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_more"
+            android:padding="4dp" />
+
+    </RelativeLayout>
+
+    <!-- Info Layout -->
+    <LinearLayout
+        android:id="@+id/layoutInfo"
+        android:layout_below="@+id/layout_toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal">
+
+        <!-- User Info -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- User Icon -->
+            <ImageView
+                android:id="@+id/imgUser"
+                android:src="@drawable/ic_user"
+                android:layout_width="30dp"
+                android:layout_height="40dp"/>
+
+            <!-- User Details -->
+            <LinearLayout
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitleUser"
+                    android:text="@string/user"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_num_user"
+                    android:text="2"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Accuracy Info -->
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Accuracy Icon -->
+            <ImageView
+                android:id="@+id/img_accuracy"
+                android:src="@drawable/ic_accuracy"
+                android:layout_width="30dp"
+                android:layout_height="40dp"/>
+
+            <!-- Accuracy Details -->
+            <LinearLayout
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitleAccuracy"
+                    android:text="@string/accuracy"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_accuracy"
+                    android:text="ac"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Question Info -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Question Icon -->
+            <ImageView
+                android:id="@+id/img_question"
+                android:src="@drawable/ic_question"
+                android:layout_width="30dp"
+                android:layout_height="40dp"/>
+
+            <!-- Question Details -->
+            <LinearLayout
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitleQuestion"
+                    android:text="@string/question"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_question"
+                    android:text="14"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/layoutInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabGravity="fill">
+
+        <!-- Participant Tab -->
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabParticipant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Participant" />
+
+        <!-- Questions Tab -->
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Questions" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- ViewPager2 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_below="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

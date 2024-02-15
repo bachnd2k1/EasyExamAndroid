@@ -1,0 +1,40 @@
+<!-- res/layout/header_layout.xml -->
+<!-- Customize this layout based on your header requirements -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    style="@style/cardViewStyle"
+    android:background="@color/peach"
+    android:orientation="horizontal">
+    <!-- Add TextViews for header titles -->
+    <TextView
+        android:id="@+id/headerIdTextView"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:text="@string/name_user" />
+
+
+    <TextView
+        android:id="@+id/headerStateTextView"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:text="@string/accuracy" />
+
+    <TextView
+        android:id="@+id/headerOptionsTextView"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:text="@string/overall_point" />
+</LinearLayout>

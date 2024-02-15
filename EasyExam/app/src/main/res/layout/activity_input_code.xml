@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:padding="16dp"
+    android:layout_gravity="center">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_ar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_med">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:title="@string/enter_code"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextColor="@color/blue_black" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_app_ar"
+        android:layout_marginTop="16dp">
+        <!-- Number of Users -->
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/textViewRoomName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue_black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/room_name" />
+
+
+        <EditText
+            android:id="@+id/tietUsername"
+            android:layout_alignParentRight="true"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_code_name"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:singleLine="true" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/btnCancel"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/layout_input"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/btnSave"
+        android:background="@drawable/bg_ans_unselected"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/cancel"
+        android:textColor="@color/peach"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/btnSave"
+        android:background="@drawable/bg_ans_selected"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/layout_input"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/create"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

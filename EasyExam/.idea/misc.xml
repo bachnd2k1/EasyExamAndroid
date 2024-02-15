@@ -1,0 +1,67 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-anydpi/ic_more.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable-v24/bg_dg_name.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable-v24/custom_radius.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable-v24/ic_back.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable-v24/raised_button_background.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/bg_ans.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/bg_ans_selected.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/bg_ans_unselected.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/bg_answer_correct.xml" value="0.1055" />
+        <entry key="app/src/main/res/drawable/bg_edt.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/blackboard.xml" value="0.105" />
+        <entry key="app/src/main/res/drawable/book.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/circle_correct.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/circle_incorrect.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/history.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/home_bg.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/icon.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/keys.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/logout.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/quiz.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/rules.xml" value="0.1535" />
+        <entry key="app/src/main/res/layout/activity_after_create_exam.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_create_exam_normall.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_edit_password.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_exam.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_exam_quiz.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_final_result.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_geography_or_literature_quiz.xml" value="0.11911231884057971" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.22447916666666667" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_main_host.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_math_quiz.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_qr_code.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_scan_qr.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/custom_radius.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_name_exam.xml" value="0.11911231884057971" />
+        <entry key="app/src/main/res/layout/fragment_question.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_after_create_answer.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_an.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_answer.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_answer_after_create.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_awnser.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_history.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_layout.xml" value="0.22447916666666667" />
+        <entry key="app/src/main/res/layout/layout_after_create_exam.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/layout_item_answer.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/slide_rules.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/menu/menu_after_create_exam.xml" value="0.22447916666666667" />
+        <entry key="app/src/main/res/menu/menu_more.xml" value="0.22447916666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1535" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

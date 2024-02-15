@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                tools:text="@string/examtest" />
+
+            <TextView
+                android:id="@+id/tvTimerCounter"
+                style="@style/titleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_horizontal"
+                android:layout_alignParentRight="true"
+                tools:text="00:00" />
+
+            <TextView
+                android:id="@+id/textView78"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textAlignment="center"
+                android:textColor="@color/blue_black"
+                android:textSize="20dp"
+                android:layout_below="@id/tvTimerCounter"
+                android:text="What is the last name of Hitler?" />
+
+            <ImageView
+                android:layout_below="@+id/textView78"
+                android:layout_marginTop="24dp"
+                android:id="@+id/imgQuestion"
+                android:src="@drawable/ic_add_answer"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rvAnswer"
+               android:layout_marginTop="10dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_below="@id/imgQuestion"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+
+            <LinearLayout
+                android:layout_below="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPrev"
+                    android:background="@drawable/bg_button_exam_not_select"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:textSize="16dp"
+                    app:backgroundTint="@null"
+                    android:text="@string/previous" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNext"
+                    android:background="@drawable/bg_button_exam"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:textSize="16dp"
+                    android:text="@string/next"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="50dp"
+                android:textColor="@color/blue_black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/rvAnswer"
+                android:layout_centerHorizontal="true"
+                android:text="Current Question: 2" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

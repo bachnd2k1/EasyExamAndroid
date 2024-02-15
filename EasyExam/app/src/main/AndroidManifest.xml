@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.practice.easyexam">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EasyExam"
+        tools:targetApi="31">
+        <activity
+            android:name=".app.view.account.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.main.user.MainUserTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.statistical.StatisticalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.history.user.HistoryUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.summary.SummaryExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.history.host.HistoryHostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.examing.ExaminingTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.tracking.TrackingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.editexam.CreateQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.waiting.TimerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.scanqr.InputCodeActivity"
+            android:exported="false"
+            android:theme="@style/DialogTheme" />
+        <activity
+            android:name=".app.view.waiting.WaitingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.createroom.CreateRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.createdTests.CreatedTestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.editexam.CreateExamNormalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.main.host.MainHostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.scanqr.ScanQrActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.createqrcode.QrCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.editexam.CreateTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".app.view.examing.ExaminingActivity"
+            android:exported="false" />
+        <activity android:name=".app.view.result.FinalResultActivity" />
+        <activity android:name=".app.view.account.editpass.EditPasswordActivity" />
+        <activity android:name=".app.view.history.user.HistoryActivity" />
+        <activity android:name=".app.view.account.register.RegisterActivity" />
+        <activity
+            android:name=".app.view.login.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.practice.easyexam" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.view.main.user.MainUserActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

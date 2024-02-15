@@ -1,0 +1,14 @@
+<!-- res/drawable/custom_search_view_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid color for the background -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Outer border with the specified color and radius -->
+    <stroke
+        android:width="2dp"
+         android:color="@color/peach"
+    />
+
+    <!-- Rounded corners for the background -->
+    <corners android:radius="10dp" />
+</shape>

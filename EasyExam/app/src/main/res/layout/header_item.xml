@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="0dp"
+        android:text="Name"
+        android:textColor="@color/blue_black"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/textViewID"
+        android:text="ID"
+        android:textColor="@color/blue_black"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/textViewCurrentQuestion"
+        android:text="Question"
+        android:textColor="@color/blue_black"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/textViewState"
+        android:text="State"
+        android:textColor="@color/blue_black"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/textViewOption"
+        android:text="Option"
+        android:textColor="@color/blue_black"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>

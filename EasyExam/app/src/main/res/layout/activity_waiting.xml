@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.view.editexam.CreateTestActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_ar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/white"
+            android:theme="?attr/actionBarTheme"
+            android:layout_gravity="center_vertical">
+
+            <!-- Title text for the toolbar -->
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:textSize="18sp"
+                android:textColor="@color/blue_black"
+                android:layout_gravity="center_vertical" />
+
+            <!-- TextView to display text to the right of the toolbar -->
+            <TextView
+                android:id="@+id/tvNumUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="Right Text"
+                android:textSize="18sp"
+                android:textColor="@color/blue_black"
+                android:layout_gravity="end" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_app_ar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <!-- Number of Users -->
+
+        <TextView
+            android:id="@+id/textViewRoomName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/code_room"
+            android:textColor="@color/blue_black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/codeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edt"
+                android:gravity="center_vertical"
+                android:letterSpacing="0.3"
+                android:padding="20dp"
+                android:text="6H124G12"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:id="@+id/copyButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/book"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="16dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvSeperate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/seperate"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:padding="20dp"
+            android:gravity="center_horizontal"
+            />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/google_img"
+            android:id="@+id/imgCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnStart"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_ans_selected"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/start_quiz"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+</RelativeLayout>
+
+
