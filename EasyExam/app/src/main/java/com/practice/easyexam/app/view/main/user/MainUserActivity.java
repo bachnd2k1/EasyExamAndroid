@@ -143,7 +143,7 @@ public class MainUserActivity extends AppCompatActivity implements OptionalDialo
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     decompress = Base64.getDecoder().decode(bytes);
                 }
-                viewModel.queryRoomByID(new String(decompress));
+//                viewModel.queryRoomByID(new String(decompress));
                 // Start the appropriate activity or do other processing
             }
         });
@@ -234,7 +234,7 @@ public class MainUserActivity extends AppCompatActivity implements OptionalDialo
                 // Handle save logic here
                 String code = edtCode.getText().toString();
                 if (!code.isEmpty()) {
-                    viewModel.queryRoomByID(code);
+//                    viewModel.queryRoomByID(code);
                 } else {
                     Utils.showToast(MainUserActivity.this, R.string.empty_code);
                 }
@@ -393,7 +393,7 @@ public class MainUserActivity extends AppCompatActivity implements OptionalDialo
                     // Handle successful scan
                     String qrCodeContents = result.getContents();
                     Log.d("decompress", qrCodeContents);
-                    viewModel.queryRoomByID(qrCodeContents);
+//                    viewModel.queryRoomByID(qrCodeContents);
                 }
             }
         }

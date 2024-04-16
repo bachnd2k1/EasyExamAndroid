@@ -212,7 +212,7 @@ public class MainHostActivity extends AppCompatActivity implements OptionalDialo
                 // Handle save logic here
                 String code = edtCode.getText().toString();
                 if (!code.isEmpty()) {
-                    viewModel.queryRoomByID(code);
+//                    viewModel.queryRoomByID(code);
                 } else {
                     Utils.showToast(MainHostActivity.this, R.string.empty_code);
                 }

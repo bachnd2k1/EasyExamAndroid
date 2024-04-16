@@ -13,6 +13,7 @@ import com.practice.easyexam.app.model.RecordsResponse;
 import com.practice.easyexam.app.model.ResponseServer;
 import com.practice.easyexam.app.model.Room;
 import com.practice.easyexam.app.model.RoomResponse;
+import com.practice.easyexam.app.model.Test;
 import com.practice.easyexam.app.model.TestResponse;
 import com.practice.easyexam.app.model.UpdateResponse;
 import com.practice.easyexam.app.model.UserResponse;
@@ -83,6 +84,11 @@ public interface MyApiService {
     @Headers({"Accept: application/json"})
     @POST("Question/addQuestion.php")
     Single<ListQuestionResponse> addQuestion(@Body ArrayList<Question> questions);
+
+
+    @Headers({"Accept: application/json"})
+    @POST("Question/addQuestion1.php")
+    Single<ListQuestionResponse> addQuestion1(@Body Test test);
 
     @Headers({"Accept: application/json"})
     @POST("Room/addRoom.php")
@@ -182,7 +188,8 @@ public interface MyApiService {
     @Headers({"Accept: application/json"})
     @POST("Room/getRoomByID.php")
     Single<ApiResponse<Room>> getRoom(
-            @Field("idRoom") String idRoom
+            @Field("idRoom") String idRoom,
+            @Field("idStudent") String idStudent
     );
 
     @GET("Room/getNumUserByIDRoom.php")

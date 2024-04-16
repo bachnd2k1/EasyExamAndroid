@@ -18,7 +18,7 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    public static String IP = "192.168.1.203";
+    public static String IP = "192.168.1.236";
     public static final String PORT = "80";
         public static final String BASE_URL = "http://" + IP + ":" + PORT+ "/Exam/";
 //public static final String BASE_URL = "https://84c9-2405-4802-1cb5-f3d0-4c62-2505-c0d1-1173.ngrok-free.app/Exam/";

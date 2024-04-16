@@ -3,11 +3,9 @@ package com.practice.easyexam.app.view.statistical;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,10 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.practice.easyexam.R;
 import com.practice.easyexam.app.model.Question;
 import com.practice.easyexam.app.utils.Utils;
-import com.practice.easyexam.app.view.editexam.AnswerAfterCreateAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,10 +57,10 @@ public class QuestionStatisticalAdapter extends RecyclerView.Adapter<QuestionSta
     @Override
     public void onBindViewHolder(@NonNull AdapterExamAfterCreateViewHolder holder, int position) {
         Question question = questionArrayList.get(position);
-        Log.d("QuestionAdapter",question.getIdQuestion() + "|" + question.getIdTest());
+        Log.d("QuestionAdapter",question.getId() + "|" + question.getIdTest());
         answerAfterCreateAdapter = new AnswerStatisticalAdapter(question.getAnswers(), question.getCorrectNum());
         if (answerCountMap != null) {
-            Map<String, Integer> innerMap = answerCountMap.get(question.getIdQuestion());
+            Map<String, Integer> innerMap = answerCountMap.get(question.getId());
             answerAfterCreateAdapter.updateMap(innerMap);
         }
         int index = position + 1;

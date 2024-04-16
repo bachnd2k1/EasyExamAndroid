@@ -13,7 +13,6 @@ import com.practice.easyexam.app.model.Test;
 import com.practice.easyexam.app.model.Question;
 import com.practice.easyexam.app.data.local.ExamDatabase;
 import com.practice.easyexam.app.model.User;
-import com.practice.easyexam.app.utils.Utils;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -21,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
@@ -153,6 +151,29 @@ public class CreateTestViewModel extends ViewModel {
                             insertResult.setValue(false);
                         }
                         Log.d("ListQuestionResponse", response.getMessage() + "response");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        insertResult.setValue(false);
+                        Log.e("ListQuestionResponse", "Error: " + e.getMessage());
+                    }
+                });
+    }
+
+    public void updateExam(Test test) {
+        apiService.addQuestion1(test)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableSingleObserver<ListQuestionResponse>() {
+                    @Override
+                    public void onSuccess(ListQuestionResponse response) {
+                        if (!response.getError()) {
+                            insertResult.setValue(true);
+                        } else {
+                            insertResult.setValue(false);
+                        }
+                        Log.d("ListQuestionResponse", response.getMessage());
                     }
 
                     @Override

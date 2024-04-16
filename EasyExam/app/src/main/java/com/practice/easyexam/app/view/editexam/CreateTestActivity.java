@@ -31,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.gson.Gson;
 import com.practice.easyexam.app.data.local.SharedPref;
 import com.practice.easyexam.app.model.User;
 import com.practice.easyexam.app.model.Test;
@@ -41,7 +42,6 @@ import com.practice.easyexam.app.utils.DialogUtils;
 import com.practice.easyexam.R;
 import com.practice.easyexam.app.utils.QuizParser;
 import com.practice.easyexam.app.utils.Utils;
-import com.practice.easyexam.app.view.tracking.TrackingActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -187,9 +187,14 @@ public class CreateTestActivity extends AppCompatActivity {
                                     } else {
                                         exam.setName(name);
                                         exam.setQuestionArrayList(questionList);
+                                        exam.updateQuestionList();
                                         exam.setCreateDate(Utils.getCurrentDate());
 //                                        viewModel.updateExam(exam,user);
-                                        viewModel.addQuestionToExam(exam.getQuestionArrayList());
+//                                        viewModel.addQuestionToExam(exam.getQuestionArrayList());
+                                        Gson gson = new Gson();
+                                        String s = gson.toJson(exam);
+                                        Log.d("JsonDAta",s);
+                                        viewModel.updateExam(exam);
                                         for (Question question: questionList) {
                                             Log.d("ITEM_QUESTION",question.getQuestion());
                                         }
@@ -246,7 +251,7 @@ public class CreateTestActivity extends AppCompatActivity {
                 showToast("Size: " + questionList.size());
             }
         } else {
-            showToast("Error");
+//            showToast("Error");
         }
     }
 

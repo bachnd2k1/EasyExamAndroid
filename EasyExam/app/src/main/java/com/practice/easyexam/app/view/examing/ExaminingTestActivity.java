@@ -2,6 +2,7 @@ package com.practice.easyexam.app.view.examing;
 
 import static com.practice.easyexam.app.view.waiting.WaitingActivity.ROOM;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -37,8 +39,11 @@ import java.lang.reflect.Type;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -128,11 +133,15 @@ public class ExaminingTestActivity extends AppCompatActivity {
                         .collect(Collectors.toList());
                 outerRecordTest = recordTest;
                 if (recordTest.getQuestions() != null) {
-                    String currentTime = recordTest.getTime();
+//                    String currentTime = recordTest.getTime();
+                    String currentTime = getCurrentTime();
                     String startTime = room.startTime;
-                    Log.d("timeLeftInMillisstartTime&currentTime ",startTime + "ms" + "|" + currentTime);
-
-                    timeLeftInMillis = room.getTime() * 60000 - calculateTimeDifferenceInMillis(startTime, currentTime);;
+                    String endTime = getEndingTime(startTime,room.getTime());
+                    Log.d("timeLeftInMillisstartTime&currentTime ",startTime + "ms" + "|" + currentTime+"|" +endTime);
+                    timeLeftInMillis = room.getTime() * 60000 - calculateTimeDifferenceInMillis(startTime, currentTime) + 5;
+                    Log.d("room.getTime()",room.getTime()+"");
+//                    timeLeftInMillis = calculateTimeDifferenceInMillis(currentTime,endTime);
+                    Log.d("timeLeftInMillis1",calculateTimeDifferenceInMillis(currentTime,endTime) + "||" + calculateTimeDifferenceInMillis(startTime, currentTime));
                     currentQuestionIndex = Integer.parseInt(recordTest.getCurrentQuestion());
                     String question = recordTest.getQuestions();
                     Gson gson = new Gson();
@@ -243,6 +252,35 @@ public class ExaminingTestActivity extends AppCompatActivity {
             e.printStackTrace();
             return -1; // Invalid time format, you might want to handle this differently
         }
+    }
+
+
+    private String getEndingTime(String currentTime, int timeTest) {
+        try {
+            // Parse current time string
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(sdf.parse(currentTime));
+
+            // Add timeTest minutes
+            calendar.add(Calendar.MINUTE, timeTest);
+
+            // Format the result
+            return sdf.format(calendar.getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    private String getCurrentTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+
+        // Get the current time
+        Date currentTime = new Date();
+
+        // Format the current time using the SimpleDateFormat object
+        return sdf.format(currentTime);
     }
 
     private void saveStateRecordTest() {

@@ -90,7 +90,7 @@ public class MainUserTestActivity extends AppCompatActivity {
                 // Handle save logic here
                 String code = codeEditText.getText().toString();
                 if (!code.isEmpty()) {
-                    viewModel.queryRoomByID(code);
+                    viewModel.queryRoomByID(code, user.getIdStudent());
                 } else {
                     Utils.showToast(MainUserTestActivity.this, R.string.empty_code);
                 }
@@ -145,7 +145,8 @@ public class MainUserTestActivity extends AppCompatActivity {
                     // Handle successful scan
                     String qrCodeContents = result.getContents();
                     Log.d("decompress", qrCodeContents);
-                    viewModel.queryRoomByID(qrCodeContents);
+                    User user = sharedPref.getUser(this);
+                    viewModel.queryRoomByID(qrCodeContents,user.getIdStudent());
                 }
             }
         }

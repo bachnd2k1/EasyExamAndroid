@@ -22,9 +22,9 @@ public class Test implements Serializable {
     public Test() {
     }
 
-    public Test(String name, ArrayList<Question> questionArrayList) {
+    public Test(String name, ArrayList<Question> questions) {
         this.name = name;
-        this.questionArrayList = questionArrayList;
+        this.questionArrayList = questions;
     }
 
     public String getName() {
@@ -49,6 +49,12 @@ public class Test implements Serializable {
 
     public void setCreateDate(String createDate) {
         this.createDate = createDate;
+    }
+
+    public void updateQuestionList() {
+        for (Question question : questionArrayList) {
+            question.setIdTest(id);
+        }
     }
 
     @NonNull

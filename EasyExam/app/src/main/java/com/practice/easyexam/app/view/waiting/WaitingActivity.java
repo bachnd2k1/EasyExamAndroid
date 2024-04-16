@@ -1,5 +1,7 @@
 package com.practice.easyexam.app.view.waiting;
 
+import static com.practice.easyexam.app.data.remote.RetrofitClient.IP;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModel;
@@ -135,7 +137,7 @@ public class WaitingActivity extends AppCompatActivity {
 
     private void instantiateWebSocket() {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url("ws://192.168.1.203:8080").build();
+        Request request = new Request.Builder().url("ws://" + IP + ":8080").build();
         SocketListener socketListener = new SocketListener(this);
         webSocket = client.newWebSocket(request, socketListener);
     }
@@ -244,7 +246,9 @@ public class WaitingActivity extends AppCompatActivity {
                         true,
                         (dialogInterface, i) -> {
 //                            viewModel.finishRoom(room.getIdRoom());
-                            viewModel.deleteRoom(room.getIdRoom());
+                            if (user.getRole().equals(Constants.TEACHER)) {
+                                viewModel.deleteRoom(room.getIdRoom());
+                            }
                             finish();
                         }
                 );

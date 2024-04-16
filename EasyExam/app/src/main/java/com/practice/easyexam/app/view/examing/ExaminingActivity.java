@@ -7,7 +7,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -19,13 +18,10 @@ import android.widget.Toast;
 
 import com.practice.easyexam.app.data.local.SharedPref;
 import com.practice.easyexam.app.model.Question;
-import com.practice.easyexam.app.model.RecordTest;
 import com.practice.easyexam.app.model.Room;
 import com.practice.easyexam.app.model.Test;
 import com.practice.easyexam.app.model.User;
-import com.practice.easyexam.app.utils.Constants;
 import com.practice.easyexam.R;
-import com.practice.easyexam.app.view.result.FinalResultActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;

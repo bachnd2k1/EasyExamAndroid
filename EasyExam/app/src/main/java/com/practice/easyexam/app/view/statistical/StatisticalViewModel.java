@@ -199,7 +199,7 @@ public class StatisticalViewModel extends ViewModel {
 
             for (int i = 0; i < questionList.size(); i++) {
                 Question question = questionList.get(i);
-                Map<String, Integer> innerMap = answerSelectionCountMap.get(question.getIdQuestion());
+                Map<String, Integer> innerMap = answerSelectionCountMap.get(question.getId());
                 int index = answers.get(i);
                 String answer = question.getAnswers().get(index);
                 innerMap.compute(answer, (existingAnswer, count) -> (count == null) ? 0 : count + 1);
@@ -214,13 +214,13 @@ public class StatisticalViewModel extends ViewModel {
         ArrayList<Question> questionList = parseQuestions(recordTest);
 
         for (Question question : questionList) {
-            System.out.println("Question ID: " + question.getIdQuestion());
+            System.out.println("Question ID: " + question.getId());
             Map<String, Integer> innerMap = new HashMap<>();
 
             question.getAnswers().forEach(answer ->
                     innerMap.compute(answer, (existingAnswer, count) -> (count == null) ? 0 : count + 1));
 
-            answerSelectionCountMap.put(question.getIdQuestion(), innerMap);
+            answerSelectionCountMap.put(question.getId(), innerMap);
         }
 
         return answerSelectionCountMap;

@@ -18,7 +18,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.practice.easyexam.app.model.RecordTest;
 import com.practice.easyexam.app.model.Test;
 import com.practice.easyexam.app.model.Question;
-import com.practice.easyexam.app.utils.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,7 +26,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.rxjava3.android.plugins.RxAndroidPlugins;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -235,7 +233,7 @@ public class ExampleUnitTest {
 
     public  Map<String, Map<String,Boolean>> getExam(Test exam) {
         HashMap<String,Map<String,Boolean>> questions = new HashMap<>();
-        for (int i = 0;i < exam.getQuestionArrayList().size();i++) {
+        for (int i = 0; i < exam.getQuestionArrayList().size(); i++) {
             Question question = exam.getQuestionArrayList().get(i);
             HashMap<String,Boolean> answer = new HashMap<>();;
             for (int j = 0; j< question.getAnswers().size(); j++) {

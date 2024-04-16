@@ -88,6 +88,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
                     if (question == null) {
                         question = new Question(ques, (ArrayList<String>) answer,correctAns);
                     } else {
+//                        question.setIdQuestion();
                         question.setQuestion(ques);
                         question.setAnswers((ArrayList<String>) answer);
                         question.setCorrectNum(correctAns);

@@ -6,11 +6,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.practice.easyexam.app.data.local.SharedPref;
 import com.practice.easyexam.app.data.remote.MyApiService;
 import com.practice.easyexam.app.data.remote.RetrofitClient;
 import com.practice.easyexam.app.model.ApiResponse;
 import com.practice.easyexam.app.model.Room;
 import com.practice.easyexam.app.model.RoomResponse;
+import com.practice.easyexam.app.model.User;
 
 import java.util.List;
 
@@ -33,14 +35,14 @@ public class MainUserViewModel extends ViewModel {
         apiService = RetrofitClient.getInstance().create(MyApiService.class);
     }
 
-    public void queryRoomByID(String id) {
-        compositeDisposable.add(apiService.getRoom(id)
+    public void queryRoomByID(String id, String idUser) {
+        compositeDisposable.add(apiService.getRoom(id, idUser)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableSingleObserver<ApiResponse<Room>>() {
                     @Override
                     public void onSuccess(ApiResponse<Room> response) {
-                        Log.d("RoomResponse", response+ "");
+                        Log.d("RoomResponse", response.getMessage()+ "");
                         Room room = response.getData();
                         roomMutableLiveData.setValue(room == null ? new Room() : room);
 //                        if (room != ) {

@@ -121,10 +121,12 @@ public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 //                    String compressedResizedBase64Image = Utils.compressAndResizeImage(b64Image, newWidth, newHeight, compressionQuality);
                     viewHolder1.imageView.setImageBitmap(bitmap);
                 }
-                if (Utils.isImageUrl(ques.getImage())) {
-                    Glide.with(context)
-                            .load(ques.getImage())
-                            .into(viewHolder1.imageView);
+                if (ques != null && ques.getImage() != null) {
+                    if (Utils.isImageUrl(ques.getImage())) {
+                        Glide.with(context)
+                                .load(ques.getImage())
+                                .into(viewHolder1.imageView);
+                    }
                 }
                 viewHolder1.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

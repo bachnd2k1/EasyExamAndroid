@@ -100,7 +100,7 @@ public class LoginViewModel extends ViewModel {
                 .subscribeWith(new DisposableSingleObserver<LoginResponse>() {
                     @Override
                     public void onSuccess(LoginResponse response) {
-                        Log.d("Response", "response: " + response.getAccessToken() + "|"+response.getRefreshToken());
+                        Log.d("ResponseServer", "response: " + response.getAccessToken() + "|"+response.getRefreshToken());
                         accessTokenLiveData.setValue(response.getAccessToken());
                         if (response.isSuccess()) {
                             refreshTokenLiveData.setValue(response.getRefreshToken());
@@ -110,6 +110,7 @@ public class LoginViewModel extends ViewModel {
 
                     @Override
                     public void onError(Throwable e) {
+                        Log.d("errorLogin",e.getMessage());
                         accessTokenLiveData.setValue("");
                     }
                 });

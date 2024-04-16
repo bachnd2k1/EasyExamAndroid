@@ -41,6 +41,7 @@ public class HistoryUserActivity extends AppCompatActivity {
     TextView tvTotalTest;
     HistoryUserViewModel viewModel;
     ImageView imgBack,imgFilter;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +58,7 @@ public class HistoryUserActivity extends AppCompatActivity {
                 return (T) new HistoryUserViewModel();
             }
         }).get(HistoryUserViewModel.class);
-        User user = SharedPref.getInstance().getUser(this);
+        user = SharedPref.getInstance().getUser(this);
         viewModel.getRecordOfUser(user.getIdStudent());
         adapter = new HistoryAdapter(recordItems);
         adapter.setOnClickItemHistory (recordItem -> {
@@ -81,5 +82,11 @@ public class HistoryUserActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        viewModel.getRecordOfUser(user.getIdStudent());
     }
 }
